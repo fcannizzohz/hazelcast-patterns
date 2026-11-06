@@ -4,7 +4,7 @@
 
 How applications read and write data through Hazelcast as a cache in front of a system of record.
 
-Patterns IP-1 to IP-6 choose how reads and writes flow between application, cache and store. The later patterns deal with what goes wrong in those flows: stale or resurrected values, load spikes, freshness, and persistence failures. IDs are not contiguous because IP-7 to IP-18 are streaming patterns.
+Patterns IP-1 to IP-6 choose how reads and writes flow between application, cache and store. The later patterns deal with what goes wrong in those flows: stale or resurrected values, load spikes, freshness, and persistence failures. IDs jump from IP-6 to IP-19 because IP-7 to IP-18 belonged to the streaming patterns, which are now STR-1 to STR-11.
 
 ## Access patterns
 

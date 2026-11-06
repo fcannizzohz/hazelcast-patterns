@@ -49,22 +49,22 @@ How streaming pipelines connect to each other and to external systems, and how t
 
 | ID | Pattern | Intent |
 |---|---|---|
-| IP-7 | [Template Jobs](streaming-patterns/ip-07-template-jobs.md) | Reusable pipeline parts composed by service teams |
-| IP-8 | [Journal-Chained Stages](streaming-patterns/ip-08-journal-chained-stages.md) | Each stage's output map triggers the next stage |
-| IP-9 | [Data as Contract](streaming-patterns/ip-09-data-as-contract.md) | A shared schema decouples pipelines |
-| IP-10 | [Fan-in / Fan-out](streaming-patterns/ip-10-fan-in-fan-out.md) | Split, correlate and re-assemble streams |
-| IP-11 | [Enrichment Pipeline](streaming-patterns/ip-11-enrichment-pipeline.md) | Look up in-memory reference data per event |
-| IP-12 | [Durable Maps](streaming-patterns/ip-12-durable-maps.md) | Persist pipeline state to the system of record |
+| STR-1 | [Template Jobs](streaming-patterns/str-01-template-jobs.md) | Reusable pipeline parts composed by service teams |
+| STR-2 | [Journal-Chained Stages](streaming-patterns/str-02-journal-chained-stages.md) | Each stage's output map triggers the next stage |
+| STR-3 | [Data as Contract](streaming-patterns/str-03-data-as-contract.md) | A shared schema decouples pipelines |
+| STR-4 | [Fan-in / Fan-out](streaming-patterns/str-04-fan-in-fan-out.md) | Split, correlate and re-assemble streams |
+| STR-5 | [Enrichment Pipeline](streaming-patterns/str-05-enrichment-pipeline.md) | Look up in-memory reference data per event |
+| STR-6 | [Durable Maps](streaming-patterns/str-06-durable-maps.md) | Persist pipeline state to the system of record |
 
 ### Production concerns at the boundaries
 
 | ID | Pattern | Intent |
 |---|---|---|
-| IP-13 | [Lost Journal Recovery](streaming-patterns/ip-13-lost-journal-recovery.md) | Detect and recover events a journal dropped |
-| IP-14 | [Backpressure](streaming-patterns/ip-14-backpressure.md) | Slow stages throttle the source |
-| IP-16 | [Async Batched I/O](streaming-patterns/ip-16-async-batched-io.md) | Call slow services in asynchronous batches |
-| IP-17 | [Processing Guarantee](streaming-patterns/ip-17-processing-guarantee.md) | At-least-once or exactly-once per pipeline |
-| IP-18 | [Partitioned Compute](streaming-patterns/ip-18-partitioned-compute.md) | Process each event where its data lives |
+| STR-7 | [Lost Journal Recovery](streaming-patterns/str-07-lost-journal-recovery.md) | Detect and recover events a journal dropped |
+| STR-8 | [Backpressure](streaming-patterns/str-08-backpressure.md) | Slow stages throttle the source |
+| STR-9 | [Async Batched I/O](streaming-patterns/str-09-async-batched-io.md) | Call slow services in asynchronous batches |
+| STR-10 | [Processing Guarantee](streaming-patterns/str-10-processing-guarantee.md) | At-least-once or exactly-once per pipeline |
+| STR-11 | [Partitioned Compute](streaming-patterns/str-11-partitioned-compute.md) | Process each event where its data lives |
 
 ## [Architecture patterns](architecture-patterns/README.md)
 

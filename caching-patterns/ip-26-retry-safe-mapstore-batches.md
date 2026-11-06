@@ -56,7 +56,7 @@ sequenceDiagram
 - (−) The store needs a version column or equivalent, and a conditional upsert.
 - (−) The quarantine needs an owner, monitoring and a replay procedure.
 
-**Related patterns.** [IP-3](ip-03-write-through.md), [IP-4](ip-04-write-behind.md), [IP-20](ip-20-tombstone-with-version-guard.md), [IP-27](ip-27-write-behind-loss-budget-and-recovery.md), [IP-12](../streaming-patterns/ip-12-durable-maps.md).
+**Related patterns.** [IP-3](ip-03-write-through.md), [IP-4](ip-04-write-behind.md), [IP-20](ip-20-tombstone-with-version-guard.md), [IP-27](ip-27-write-behind-loss-budget-and-recovery.md), [STR-6](../streaming-patterns/str-06-durable-maps.md).
 
 ---
 

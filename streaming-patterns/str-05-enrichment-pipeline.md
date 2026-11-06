@@ -1,6 +1,6 @@
 [Patterns](../patterns.md) › [Streaming patterns](README.md) › [Pipeline composition and data contracts](README.md#pipeline-composition-and-data-contracts)
 
-# IP-11 Enrichment Pipeline
+# STR-5 Enrichment Pipeline
 
 **Intent.** Each event is enriched with reference data held in memory.
 
@@ -30,8 +30,8 @@ flowchart LR
 - (+) Lookups stay in memory and, with partitioned compute, local.
 - (−) The reference data must be loaded and kept fresh.
 
-**Related patterns.** [IP-2](../caching-patterns/ip-02-read-through.md), [IP-5](../caching-patterns/ip-05-refresh-ahead.md), [IP-18](ip-18-partitioned-compute.md), [ARCH-7](../architecture-patterns/arch-07-shared-reference-map-with-near-cache.md), [ARCH-8](../architecture-patterns/arch-08-change-fed-read-model.md).
+**Related patterns.** [IP-2](../caching-patterns/ip-02-read-through.md), [IP-5](../caching-patterns/ip-05-refresh-ahead.md), [STR-11](str-11-partitioned-compute.md), [ARCH-7](../architecture-patterns/arch-07-shared-reference-map-with-near-cache.md), [ARCH-8](../architecture-patterns/arch-08-change-fed-read-model.md).
 
 ---
 
-← [IP-10 Fan-in / Fan-out](ip-10-fan-in-fan-out.md) · [IP-12 Durable Maps](ip-12-durable-maps.md) →
+← [STR-4 Fan-in / Fan-out](str-04-fan-in-fan-out.md) · [STR-6 Durable Maps](str-06-durable-maps.md) →

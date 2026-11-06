@@ -1,6 +1,6 @@
 [Patterns](../patterns.md) › [Streaming patterns](README.md) › [Production concerns at the boundaries](README.md#production-concerns-at-the-boundaries)
 
-# IP-17 Processing Guarantee
+# STR-10 Processing Guarantee
 
 **Intent.** Choose at-least-once or exactly-once per pipeline.
 
@@ -37,8 +37,8 @@ flowchart TD
 - (−) Snapshots are held in the cluster's memory. A full cluster loss loses them unless Persistence is configured, and then the source is replayed from wherever the job is restarted.
 - (−) A guarantee inside the pipeline is not end-to-end once-only: an operation with external side effects also needs an idempotency key ([ARCH-5](../architecture-patterns/arch-05-platform-level-idempotency.md)).
 
-**Related patterns.** [IP-12](ip-12-durable-maps.md), [ARCH-5](../architecture-patterns/arch-05-platform-level-idempotency.md).
+**Related patterns.** [STR-6](str-06-durable-maps.md), [ARCH-5](../architecture-patterns/arch-05-platform-level-idempotency.md).
 
 ---
 
-← [IP-16 Async Batched I/O](ip-16-async-batched-io.md) · [IP-18 Partitioned Compute](ip-18-partitioned-compute.md) →
+← [STR-9 Async Batched I/O](str-09-async-batched-io.md) · [STR-11 Partitioned Compute](str-11-partitioned-compute.md) →

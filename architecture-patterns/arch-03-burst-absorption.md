@@ -38,7 +38,7 @@ flowchart LR
 ```
 
 **Hazelcast mechanics.**
-- Durable or large bursts: a durable log (such as Kafka) in front of a pipeline, with Jet backpressure pacing consumption to the slowest stage ([IP-14](../streaming-patterns/ip-14-backpressure.md)) and async batched calls to the consumer ([IP-16](../streaming-patterns/ip-16-async-batched-io.md)).
+- Durable or large bursts: a durable log (such as Kafka) in front of a pipeline, with Jet backpressure pacing consumption to the slowest stage ([STR-8](../streaming-patterns/str-08-backpressure.md)) and async batched calls to the consumer ([STR-9](../streaming-patterns/str-09-async-batched-io.md)).
 - In-memory buffers: an IQueue or a Ringbuffer is not partitioned. All its items live in one partition, on one member plus its backups, so a single one does not scale out, and its capacity is that member's memory. An IQueue is unbounded unless `max-size` is set, so set it. A Ringbuffer with `OverflowPolicy.FAIL` refuses new items when full; with `OVERWRITE` it drops the oldest, which is loss, not absorption. Both are in memory; durability needs a `QueueStore` / `RingbufferStore` or a durable log. To spread load, use several queues, one per key range.
 - Writes towards a store: write-behind is a write buffer, bounded and measured as in [IP-27](../caching-patterns/ip-27-write-behind-loss-budget-and-recovery.md).
 - CP claims are bounded per Raft group ([ARCH-5](arch-05-platform-level-idempotency.md)); at burst rate a per-request claim can become the bottleneck, so claim after the buffer or spread keys across several CP groups.
@@ -50,7 +50,7 @@ flowchart LR
 - (−) Wrong sizing either rejects too early or holds too much for too long; recovery after a long spike is slow.
 - (−) Do not use when synchronous completion is mandatory or no backlog is acceptable.
 
-**Related patterns.** [IP-14](../streaming-patterns/ip-14-backpressure.md), [IP-16](../streaming-patterns/ip-16-async-batched-io.md), [IP-4](../caching-patterns/ip-04-write-behind.md), [IP-27](../caching-patterns/ip-27-write-behind-loss-budget-and-recovery.md), [ARCH-5](arch-05-platform-level-idempotency.md), [ARCH-2](arch-02-brownout-and-degraded-mode.md).
+**Related patterns.** [STR-8](../streaming-patterns/str-08-backpressure.md), [STR-9](../streaming-patterns/str-09-async-batched-io.md), [IP-4](../caching-patterns/ip-04-write-behind.md), [IP-27](../caching-patterns/ip-27-write-behind-loss-budget-and-recovery.md), [ARCH-5](arch-05-platform-level-idempotency.md), [ARCH-2](arch-02-brownout-and-degraded-mode.md).
 
 ---
 

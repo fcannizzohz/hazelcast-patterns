@@ -1,6 +1,6 @@
 [Patterns](../patterns.md) › [Streaming patterns](README.md) › [Production concerns at the boundaries](README.md#production-concerns-at-the-boundaries)
 
-# IP-18 Partitioned Compute
+# STR-11 Partitioned Compute
 
 **Intent.** Process each event in the partition where its data lives.
 
@@ -35,8 +35,8 @@ flowchart LR
 - (−) A hot key stays on one partition thread and cannot be spread out.
 - (−) Cross-key aggregates need a shuffle across members.
 
-**Related patterns.** [IP-8](ip-08-journal-chained-stages.md), [IP-11](ip-11-enrichment-pipeline.md), [ARCH-9](../architecture-patterns/arch-09-state-externalisation-with-in-place-updates.md), [ARCH-11](../architecture-patterns/arch-11-orchestration-as-dataflow.md).
+**Related patterns.** [STR-2](str-02-journal-chained-stages.md), [STR-5](str-05-enrichment-pipeline.md), [ARCH-9](../architecture-patterns/arch-09-state-externalisation-with-in-place-updates.md), [ARCH-11](../architecture-patterns/arch-11-orchestration-as-dataflow.md).
 
 ---
 
-← [IP-17 Processing Guarantee](ip-17-processing-guarantee.md)
+← [STR-10 Processing Guarantee](str-10-processing-guarantee.md)

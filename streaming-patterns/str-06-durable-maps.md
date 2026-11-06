@@ -1,6 +1,6 @@
 [Patterns](../patterns.md) › [Streaming patterns](README.md) › [Pipeline composition and data contracts](README.md#pipeline-composition-and-data-contracts)
 
-# IP-12 Durable Maps
+# STR-6 Durable Maps
 
 **Intent.** Persist the state a pipeline keeps in in-memory maps to a system of record, with a clear rule for how far the stored copy can lag or lead the pipeline.
 
@@ -42,8 +42,8 @@ sequenceDiagram
 - (−) Option 1: the stored state can run ahead of the last snapshot; correct only with idempotent, deterministic upserts.
 - (−) Option 2: the database lags memory by up to one snapshot interval, and needs XA or an equivalent prepare/commit protocol.
 
-**Related patterns.** [IP-3](../caching-patterns/ip-03-write-through.md), [IP-4](../caching-patterns/ip-04-write-behind.md), [IP-17](ip-17-processing-guarantee.md).
+**Related patterns.** [IP-3](../caching-patterns/ip-03-write-through.md), [IP-4](../caching-patterns/ip-04-write-behind.md), [STR-10](str-10-processing-guarantee.md).
 
 ---
 
-← [IP-11 Enrichment Pipeline](ip-11-enrichment-pipeline.md) · [IP-13 Lost Journal Recovery](ip-13-lost-journal-recovery.md) →
+← [STR-5 Enrichment Pipeline](str-05-enrichment-pipeline.md) · [STR-7 Lost Journal Recovery](str-07-lost-journal-recovery.md) →

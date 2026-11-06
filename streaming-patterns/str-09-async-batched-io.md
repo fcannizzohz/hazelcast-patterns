@@ -1,6 +1,6 @@
 [Patterns](../patterns.md) › [Streaming patterns](README.md) › [Production concerns at the boundaries](README.md#production-concerns-at-the-boundaries)
 
-# IP-16 Async Batched I/O
+# STR-9 Async Batched I/O
 
 **Intent.** Call slow external services asynchronously and in batches.
 
@@ -37,8 +37,8 @@ sequenceDiagram
 - (−) The service must accept batches, or a stage must adapt them.
 - (−) When the job restarts from a snapshot, replayed events call the service again; calls must be read-only or idempotent.
 
-**Related patterns.** [IP-11](ip-11-enrichment-pipeline.md), [IP-14](ip-14-backpressure.md).
+**Related patterns.** [STR-5](str-05-enrichment-pipeline.md), [STR-8](str-08-backpressure.md).
 
 ---
 
-← [IP-14 Backpressure](ip-14-backpressure.md) · [IP-17 Processing Guarantee](ip-17-processing-guarantee.md) →
+← [STR-8 Backpressure](str-08-backpressure.md) · [STR-10 Processing Guarantee](str-10-processing-guarantee.md) →

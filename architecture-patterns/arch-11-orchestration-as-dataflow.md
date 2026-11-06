@@ -35,15 +35,15 @@ flowchart TB
     Before ~~~ After
 ```
 
-**Hazelcast mechanics.** Pipelines; partitioned IMap state; journal chaining ([IP-8](../streaming-patterns/ip-08-journal-chained-stages.md)); partitioned compute ([IP-18](../streaming-patterns/ip-18-partitioned-compute.md)).
+**Hazelcast mechanics.** Pipelines; partitioned IMap state; journal chaining ([STR-2](../streaming-patterns/str-02-journal-chained-stages.md)); partitioned compute ([STR-11](../streaming-patterns/str-11-partitioned-compute.md)).
 
 **Consequences.**
 - (+) Lower latency with fewer moving parts.
 - (−) An option for hot paths, not a prerequisite for the other patterns.
-- (−) Stages in one job deploy together: changing one stage means restarting or upgrading the whole job. [IP-8](../streaming-patterns/ip-08-journal-chained-stages.md) keeps stages in separate jobs if that matters.
-- (−) Effects on external systems still need [ARCH-5](arch-05-platform-level-idempotency.md) or a transactional sink ([IP-17](../streaming-patterns/ip-17-processing-guarantee.md)).
+- (−) Stages in one job deploy together: changing one stage means restarting or upgrading the whole job. [STR-2](../streaming-patterns/str-02-journal-chained-stages.md) keeps stages in separate jobs if that matters.
+- (−) Effects on external systems still need [ARCH-5](arch-05-platform-level-idempotency.md) or a transactional sink ([STR-10](../streaming-patterns/str-10-processing-guarantee.md)).
 
-**Related patterns.** [ARCH-4](arch-04-compute-near-data.md), [IP-7](../streaming-patterns/ip-07-template-jobs.md), [IP-8](../streaming-patterns/ip-08-journal-chained-stages.md), [IP-18](../streaming-patterns/ip-18-partitioned-compute.md), [ARCH-10](arch-10-live-operational-view.md).
+**Related patterns.** [ARCH-4](arch-04-compute-near-data.md), [STR-1](../streaming-patterns/str-01-template-jobs.md), [STR-2](../streaming-patterns/str-02-journal-chained-stages.md), [STR-11](../streaming-patterns/str-11-partitioned-compute.md), [ARCH-10](arch-10-live-operational-view.md).
 
 ---
 

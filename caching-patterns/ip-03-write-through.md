@@ -38,7 +38,7 @@ sequenceDiagram
 - (−) Off the happy path they can diverge: a store call that times out after the database committed reports a failure to the caller although the store holds the value, and writers that bypass Hazelcast leave the cache stale.
 - (−) The IMap is an AP structure: during a split-brain, both sides keep accepting writes and storing them, so the store can end up with whichever side wrote last. Use split-brain protection on the map if that is not acceptable.
 
-**Related patterns.** [IP-4](ip-04-write-behind.md) trades consistency for latency. [IP-26](ip-26-retry-safe-mapstore-batches.md) makes `store` safe to repeat. [IP-12](../streaming-patterns/ip-12-durable-maps.md).
+**Related patterns.** [IP-4](ip-04-write-behind.md) trades consistency for latency. [IP-26](ip-26-retry-safe-mapstore-batches.md) makes `store` safe to repeat. [STR-6](../streaming-patterns/str-06-durable-maps.md).
 
 ---
 

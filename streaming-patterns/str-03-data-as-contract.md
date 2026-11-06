@@ -1,6 +1,6 @@
 [Patterns](../patterns.md) › [Streaming patterns](README.md) › [Pipeline composition and data contracts](README.md#pipeline-composition-and-data-contracts)
 
-# IP-9 Data as Contract
+# STR-3 Data as Contract
 
 **Intent.** A shared schema lets pipelines evolve independently.
 
@@ -33,8 +33,8 @@ flowchart LR
 - (+) Every stage can evolve on its own.
 - (−) Compatibility rules must be agreed and enforced; nothing in Hazelcast rejects an incompatible change at write time.
 
-**Related patterns.** [IP-7](ip-07-template-jobs.md), [IP-8](ip-08-journal-chained-stages.md).
+**Related patterns.** [STR-1](str-01-template-jobs.md), [STR-2](str-02-journal-chained-stages.md).
 
 ---
 
-← [IP-8 Journal-Chained Stages](ip-08-journal-chained-stages.md) · [IP-10 Fan-in / Fan-out](ip-10-fan-in-fan-out.md) →
+← [STR-2 Journal-Chained Stages](str-02-journal-chained-stages.md) · [STR-4 Fan-in / Fan-out](str-04-fan-in-fan-out.md) →

@@ -40,7 +40,7 @@ sequenceDiagram
 - (−) After a failover, the promoted backup replays its queue, so the store can receive the same entry twice. `store` and `storeAll` must be idempotent.
 - (−) If the store stays down, queued changes accumulate in memory (and, with coalescing off, writes to the map eventually fail).
 
-**Related patterns.** [IP-3](ip-03-write-through.md), [IP-26](ip-26-retry-safe-mapstore-batches.md), [IP-27](ip-27-write-behind-loss-budget-and-recovery.md), [IP-12](../streaming-patterns/ip-12-durable-maps.md).
+**Related patterns.** [IP-3](ip-03-write-through.md), [IP-26](ip-26-retry-safe-mapstore-batches.md), [IP-27](ip-27-write-behind-loss-budget-and-recovery.md), [STR-6](../streaming-patterns/str-06-durable-maps.md).
 
 ---
 

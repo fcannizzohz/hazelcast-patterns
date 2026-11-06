@@ -10,12 +10,12 @@ These patterns describe how streaming pipelines connect to each other and to the
 
 | ID | Pattern | Intent |
 |---|---|---|
-| IP-7 | [Template Jobs](ip-07-template-jobs.md) | Reusable pipeline parts composed by service teams |
-| IP-8 | [Journal-Chained Stages](ip-08-journal-chained-stages.md) | Each stage's output map triggers the next stage |
-| IP-9 | [Data as Contract](ip-09-data-as-contract.md) | A shared schema decouples pipelines |
-| IP-10 | [Fan-in / Fan-out](ip-10-fan-in-fan-out.md) | Split, correlate and re-assemble streams |
-| IP-11 | [Enrichment Pipeline](ip-11-enrichment-pipeline.md) | Look up in-memory reference data per event |
-| IP-12 | [Durable Maps](ip-12-durable-maps.md) | Persist pipeline state to the system of record |
+| STR-1 | [Template Jobs](str-01-template-jobs.md) | Reusable pipeline parts composed by service teams |
+| STR-2 | [Journal-Chained Stages](str-02-journal-chained-stages.md) | Each stage's output map triggers the next stage |
+| STR-3 | [Data as Contract](str-03-data-as-contract.md) | A shared schema decouples pipelines |
+| STR-4 | [Fan-in / Fan-out](str-04-fan-in-fan-out.md) | Split, correlate and re-assemble streams |
+| STR-5 | [Enrichment Pipeline](str-05-enrichment-pipeline.md) | Look up in-memory reference data per event |
+| STR-6 | [Durable Maps](str-06-durable-maps.md) | Persist pipeline state to the system of record |
 
 ## Production concerns at the boundaries
 
@@ -23,10 +23,29 @@ These patterns deal with overload, duplicates, slow dependencies and failure whe
 
 | ID | Pattern | Intent |
 |---|---|---|
-| IP-13 | [Lost Journal Recovery](ip-13-lost-journal-recovery.md) | Detect and recover events a journal dropped |
-| IP-14 | [Backpressure](ip-14-backpressure.md) | Slow stages throttle the source |
-| IP-16 | [Async Batched I/O](ip-16-async-batched-io.md) | Call slow services in asynchronous batches |
-| IP-17 | [Processing Guarantee](ip-17-processing-guarantee.md) | At-least-once or exactly-once per pipeline |
-| IP-18 | [Partitioned Compute](ip-18-partitioned-compute.md) | Process each event where its data lives |
+| STR-7 | [Lost Journal Recovery](str-07-lost-journal-recovery.md) | Detect and recover events a journal dropped |
+| STR-8 | [Backpressure](str-08-backpressure.md) | Slow stages throttle the source |
+| STR-9 | [Async Batched I/O](str-09-async-batched-io.md) | Call slow services in asynchronous batches |
+| STR-10 | [Processing Guarantee](str-10-processing-guarantee.md) | At-least-once or exactly-once per pipeline |
+| STR-11 | [Partitioned Compute](str-11-partitioned-compute.md) | Process each event where its data lives |
 
-IP-15 (Dedup with Flush on Snapshot) was removed on 6 November 2026 and its ID is retired. For exactly-once effects, see [IP-17](ip-17-processing-guarantee.md) and [ARCH-5](../architecture-patterns/arch-05-platform-level-idempotency.md).
+Dedup with Flush on Snapshot (old ID IP-15) was removed on 6 November 2026 and was never given a STR ID. For exactly-once effects, see [STR-10](str-10-processing-guarantee.md) and [ARCH-5](../architecture-patterns/arch-05-platform-level-idempotency.md).
+
+## ID history
+
+The streaming patterns were split from one integration category with the caching patterns and first used the prefix IP. They were renumbered to STR on 2026-11-06. Older notes use the old IDs.
+
+| Old ID | New ID |
+|---|---|
+| IP-7 | STR-1 |
+| IP-8 | STR-2 |
+| IP-9 | STR-3 |
+| IP-10 | STR-4 |
+| IP-11 | STR-5 |
+| IP-12 | STR-6 |
+| IP-13 | STR-7 |
+| IP-14 | STR-8 |
+| IP-15 | Retired: Dedup with Flush on Snapshot, removed |
+| IP-16 | STR-9 |
+| IP-17 | STR-10 |
+| IP-18 | STR-11 |

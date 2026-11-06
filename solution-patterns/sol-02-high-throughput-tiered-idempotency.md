@@ -53,10 +53,10 @@ flowchart TD
 - [ARCH-5 Platform-Level Idempotency](../architecture-patterns/arch-05-platform-level-idempotency.md): the claim tier. SOL-2 adds a filter in front to avoid durable reads at high rates.
 - [IP-19 Negative Caching](../caching-patterns/ip-19-negative-caching.md), inverted: the filter remembers presence compactly, and its useful answer is the guaranteed negative.
 - [IP-25 Selective Warm-Up](../caching-patterns/ip-25-selective-warm-up.md): rebuilding the filter newest slice first, at a controlled rate.
-- [ARCH-2 Brownout and Degraded Mode](../architecture-patterns/arch-02-brownout-and-degraded-mode.md) and [IP-14 Backpressure](../streaming-patterns/ip-14-backpressure.md): shedding load while the filter is cold or saturated.
+- [ARCH-2 Brownout and Degraded Mode](../architecture-patterns/arch-02-brownout-and-degraded-mode.md) and [STR-8 Backpressure](../streaming-patterns/str-08-backpressure.md): shedding load while the filter is cold or saturated.
 - [ARCH-3 Burst Absorption](../architecture-patterns/arch-03-burst-absorption.md): queue spikes before the claim tier.
-- [IP-18 Partitioned Compute](../streaming-patterns/ip-18-partitioned-compute.md): run the filter check where the key's shard lives.
-- [IP-17 Processing Guarantee](../streaming-patterns/ip-17-processing-guarantee.md): inside one streaming job, the engine's own guarantee may make this unnecessary.
+- [STR-11 Partitioned Compute](../streaming-patterns/str-11-partitioned-compute.md): run the filter check where the key's shard lives.
+- [STR-10 Processing Guarantee](../streaming-patterns/str-10-processing-guarantee.md): inside one streaming job, the engine's own guarantee may make this unnecessary.
 
 **Hazelcast mechanics.**
 - Filter: an IMap per slice of small bit-array shards, keyed so that one key's bits land in one shard (partition-aware keys). Set bits with an EntryProcessor on the shard's partition owner; check membership with a read-only, offloadable EntryProcessor or a partition-routed task, so one check is one call per slice. Keep shards small: with BINARY (the default) or NATIVE in-memory format an EntryProcessor deserialises and reserialises the whole value, so a single-bit update copies the shard; OBJECT format avoids the copy on the owner at the cost of on-heap objects.
@@ -84,7 +84,7 @@ flowchart TD
 
 **When not to use it.** Request rates the durable store handles comfortably; a store with a cheap conditional insert; duplicate windows so long that the filter would be very large; or processing inside one streaming job, where the engine's processing guarantee and keyed state are simpler.
 
-**Related patterns.** [ARCH-5](../architecture-patterns/arch-05-platform-level-idempotency.md), [IP-14](../streaming-patterns/ip-14-backpressure.md), [IP-17](../streaming-patterns/ip-17-processing-guarantee.md), [IP-18](../streaming-patterns/ip-18-partitioned-compute.md), [IP-19](../caching-patterns/ip-19-negative-caching.md), [IP-25](../caching-patterns/ip-25-selective-warm-up.md), [ARCH-2](../architecture-patterns/arch-02-brownout-and-degraded-mode.md), [ARCH-3](../architecture-patterns/arch-03-burst-absorption.md), [SOL-1](sol-01-semantic-relational-cache.md).
+**Related patterns.** [ARCH-5](../architecture-patterns/arch-05-platform-level-idempotency.md), [STR-8](../streaming-patterns/str-08-backpressure.md), [STR-10](../streaming-patterns/str-10-processing-guarantee.md), [STR-11](../streaming-patterns/str-11-partitioned-compute.md), [IP-19](../caching-patterns/ip-19-negative-caching.md), [IP-25](../caching-patterns/ip-25-selective-warm-up.md), [ARCH-2](../architecture-patterns/arch-02-brownout-and-degraded-mode.md), [ARCH-3](../architecture-patterns/arch-03-burst-absorption.md), [SOL-1](sol-01-semantic-relational-cache.md).
 
 **Background.** Bloom, CACM 1970; Kirsch and Mitzenmacher, "Less Hashing, Same Performance", ESA 2006 (two hashes are enough); Putze, Sanders and Singler, "Cache-, Hash- and Space-Efficient Bloom Filters", 2007 (blocked filters); Kleppmann, "How to do distributed locking", 2016 (fencing tokens).
 

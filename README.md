@@ -22,9 +22,9 @@ Each category of patterns has its own directory. Inside it, a `README.md` introd
 ├── caching-patterns/            IP-1 to IP-6, IP-19 to IP-27: reading and writing through Hazelcast as a cache
 │   ├── README.md
 │   └── ip-01-cache-aside.md …
-├── streaming-patterns/          IP-7 to IP-18: composing pipelines and handling production concerns at their boundaries
+├── streaming-patterns/          STR-n: composing pipelines and handling production concerns at their boundaries
 │   ├── README.md
-│   └── ip-07-template-jobs.md …
+│   └── str-01-template-jobs.md …
 ├── architecture-patterns/       ARCH-n: system-level and capability architectures
 │   ├── README.md
 │   ├── arch-01-operational-data-fabric.md …
@@ -34,14 +34,14 @@ Each category of patterns has its own directory. Inside it, a `README.md` introd
     └── sol-01-semantic-relational-cache.md …
 ```
 
-New categories will be added over time as new top-level directories, each with its own ID prefix. Caching and streaming patterns share the IP prefix because they started as one integration category; their IDs were kept so existing references stay valid. Architecture patterns use ARCH only; the IMP patterns of the former implementation category were renumbered ARCH-5 to ARCH-11. See [CONTRIBUTING.md](CONTRIBUTING.md).
+New categories will be added over time as new top-level directories, each with its own ID prefix. Caching patterns keep the IP prefix of the integration category they started in. Streaming patterns, which came from the same category, were renumbered from IP to STR, and the IMP patterns of the former implementation category were renumbered ARCH-5 to ARCH-11; each category README has an ID history table. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Categories
 
 | Category | Prefix | What it covers |
 |---|---|---|
 | [Caching patterns](caching-patterns/README.md) | IP | How applications read and write data through Hazelcast as a cache in front of a system of record. |
-| [Streaming patterns](streaming-patterns/README.md) | IP | How streaming pipelines connect to each other and to external systems, and how they cope with overload, duplicates, slow dependencies and failure. |
+| [Streaming patterns](streaming-patterns/README.md) | STR | How streaming pipelines connect to each other and to external systems, and how they cope with overload, duplicates, slow dependencies and failure. |
 | [Architecture patterns](architecture-patterns/README.md) | ARCH | System-level and capability architectures built on Hazelcast, combining the caching and streaming patterns. |
 | [Solution patterns](solution-patterns/README.md) | SOL | End-to-end solutions to a recognisable business problem, described as concepts and composed from the other patterns. |
 

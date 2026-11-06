@@ -38,7 +38,7 @@ flowchart LR
 - (−) SQL reads are not a point-in-time snapshot across keys, so a dashboard can briefly show totals that do not add up.
 - (−) History stays in the log and the analytics store.
 
-**Related patterns.** [IP-8](../streaming-patterns/ip-08-journal-chained-stages.md), [IP-10](../streaming-patterns/ip-10-fan-in-fan-out.md), [IP-17](../streaming-patterns/ip-17-processing-guarantee.md), [ARCH-11](arch-11-orchestration-as-dataflow.md), [ARCH-4](arch-04-compute-near-data.md) (query and aggregate the views in place).
+**Related patterns.** [STR-2](../streaming-patterns/str-02-journal-chained-stages.md), [STR-4](../streaming-patterns/str-04-fan-in-fan-out.md), [STR-10](../streaming-patterns/str-10-processing-guarantee.md), [ARCH-11](arch-11-orchestration-as-dataflow.md), [ARCH-4](arch-04-compute-near-data.md) (query and aggregate the views in place).
 
 ---
 

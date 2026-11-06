@@ -18,7 +18,7 @@ IDs are permanent. If a pattern is retired, keep its ID unused rather than renum
 ## Adding a category
 
 1. Create a top-level directory named after the category, in lowercase with hyphens, for example `security-patterns/`.
-2. Pick a short ID prefix that no other category uses, for example `SEC`. (One exception keeps old IDs stable: caching and streaming patterns share `IP` because they were split from one category. Architecture patterns all use `ARCH`; the former `IMP` patterns were renumbered ARCH-5 to ARCH-11 on 2026-11-06, see the [architecture README](architecture-patterns/README.md#id-history).)
+2. Pick a short ID prefix that no other category uses, for example `SEC`. (Caching patterns keep `IP`, the prefix of the category they started in. Former IDs were renumbered on 2026-11-06: streaming patterns from `IP` to `STR`, see the [streaming README](streaming-patterns/README.md#id-history), and `IMP` patterns to `ARCH`, see the [architecture README](architecture-patterns/README.md#id-history). Retired IDs are never reused.)
 3. Add a `README.md` to the directory with a breadcrumb back to [patterns.md](patterns.md), a short introduction, and a table of the category's patterns (optionally grouped into sections).
 4. Add the category to the table in the root [README.md](README.md), to the directory tree there, and as a new section in [patterns.md](patterns.md).
 

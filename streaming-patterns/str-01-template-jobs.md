@@ -1,6 +1,6 @@
 [Patterns](../patterns.md) › [Streaming patterns](README.md) › [Pipeline composition and data contracts](README.md#pipeline-composition-and-data-contracts)
 
-# IP-7 Template Jobs
+# STR-1 Template Jobs
 
 Also known as: Composable Pipelines.
 
@@ -41,8 +41,8 @@ flowchart LR
 - (−) Shared parts become a dependency that needs versioning. A running job keeps the version it was submitted with; picking up a new version means resubmitting or upgrading the job.
 - (−) Shared stateful parts (such as a dedup stage) carry snapshot state; changing their state format breaks restoring older snapshots.
 
-**Related patterns.** [IP-8](ip-08-journal-chained-stages.md), [IP-9](ip-09-data-as-contract.md).
+**Related patterns.** [STR-2](str-02-journal-chained-stages.md), [STR-3](str-03-data-as-contract.md).
 
 ---
 
-[IP-8 Journal-Chained Stages](ip-08-journal-chained-stages.md) →
+[STR-2 Journal-Chained Stages](str-02-journal-chained-stages.md) →

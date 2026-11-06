@@ -41,7 +41,7 @@ sequenceDiagram
 - (−) CP needs a majority; a partitioned minority loses CP operations.
 - (−) A cache alone does not give exactly-once: the key claim and the system of record's final state together do.
 
-**Related patterns.** [IP-17](../streaming-patterns/ip-17-processing-guarantee.md), [ARCH-6](arch-06-site-strategy-per-data-class.md), [ARCH-9](arch-09-state-externalisation-with-in-place-updates.md), [ARCH-3](arch-03-burst-absorption.md) (claim after the buffer at burst rates).
+**Related patterns.** [STR-10](../streaming-patterns/str-10-processing-guarantee.md), [ARCH-6](arch-06-site-strategy-per-data-class.md), [ARCH-9](arch-09-state-externalisation-with-in-place-updates.md), [ARCH-3](arch-03-burst-absorption.md) (claim after the buffer at burst rates).
 
 ---
 

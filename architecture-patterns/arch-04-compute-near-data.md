@@ -24,7 +24,7 @@ Also known as: Data-local processing, function shipping.
 5. Make cross-key work explicit: it needs a shuffle or a second step.
 6. Version shipped code and deploy it with the clients that call it.
 
-For continuous streams, the equivalent is partitioned stream processing ([IP-18](../streaming-patterns/ip-18-partitioned-compute.md)).
+For continuous streams, the equivalent is partitioned stream processing ([STR-11](../streaming-patterns/str-11-partitioned-compute.md)).
 
 **Structure.**
 
@@ -57,7 +57,7 @@ flowchart LR
 - (−) Deployment and versioning of shipped code adds an operational step.
 - (−) Do not use when the data is small, the processing is light, or central execution is fast enough.
 
-**Related patterns.** [IP-18](../streaming-patterns/ip-18-partitioned-compute.md), [ARCH-9](arch-09-state-externalisation-with-in-place-updates.md), [ARCH-11](arch-11-orchestration-as-dataflow.md), [IP-11](../streaming-patterns/ip-11-enrichment-pipeline.md).
+**Related patterns.** [STR-11](../streaming-patterns/str-11-partitioned-compute.md), [ARCH-9](arch-09-state-externalisation-with-in-place-updates.md), [ARCH-11](arch-11-orchestration-as-dataflow.md), [STR-5](../streaming-patterns/str-05-enrichment-pipeline.md).
 
 ---
 

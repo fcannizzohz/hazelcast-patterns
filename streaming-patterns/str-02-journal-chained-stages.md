@@ -1,6 +1,6 @@
 [Patterns](../patterns.md) › [Streaming patterns](README.md) › [Pipeline composition and data contracts](README.md#pipeline-composition-and-data-contracts)
 
-# IP-8 Journal-Chained Stages
+# STR-2 Journal-Chained Stages
 
 Also known as: Event-driven stage chaining.
 
@@ -36,10 +36,10 @@ flowchart LR
 - (+) State changes are events: downstream stages react at once, without polling or duplicate ingestion.
 - (+) Every stage's state is queryable with SQL, once a mapping is created for each map.
 - (−) Each hop is at-least-once: when a stage restarts from a snapshot it rewrites entries, and the journal emits those updates again. Downstream stages must tolerate repeated updates of the same key.
-- (−) Journals have finite capacity and can drop events under extreme load ([IP-13](ip-13-lost-journal-recovery.md)).
+- (−) Journals have finite capacity and can drop events under extreme load ([STR-7](str-07-lost-journal-recovery.md)).
 
-**Related patterns.** [IP-13](ip-13-lost-journal-recovery.md), [IP-18](ip-18-partitioned-compute.md), [ARCH-11](../architecture-patterns/arch-11-orchestration-as-dataflow.md).
+**Related patterns.** [STR-7](str-07-lost-journal-recovery.md), [STR-11](str-11-partitioned-compute.md), [ARCH-11](../architecture-patterns/arch-11-orchestration-as-dataflow.md).
 
 ---
 
-← [IP-7 Template Jobs](ip-07-template-jobs.md) · [IP-9 Data as Contract](ip-09-data-as-contract.md) →
+← [STR-1 Template Jobs](str-01-template-jobs.md) · [STR-3 Data as Contract](str-03-data-as-contract.md) →

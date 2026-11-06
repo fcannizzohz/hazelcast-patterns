@@ -40,7 +40,7 @@ flowchart LR
 ```
 
 **Hazelcast mechanics.**
-- Feeds: CDC sources or Kafka into IMaps through pipelines ([ARCH-8](arch-08-change-fed-read-model.md), [IP-5](../caching-patterns/ip-05-refresh-ahead.md)); denormalise in the pipeline with enrichment and correlation stages ([IP-11](../streaming-patterns/ip-11-enrichment-pipeline.md), [IP-10](../streaming-patterns/ip-10-fan-in-fan-out.md)).
+- Feeds: CDC sources or Kafka into IMaps through pipelines ([ARCH-8](arch-08-change-fed-read-model.md), [IP-5](../caching-patterns/ip-05-refresh-ahead.md)); denormalise in the pipeline with enrichment and correlation stages ([STR-5](../streaming-patterns/str-05-enrichment-pipeline.md), [STR-4](../streaming-patterns/str-04-fan-in-fan-out.md)).
 - Access and read semantics as in [ARCH-8](arch-08-change-fed-read-model.md): key lookups, indexes and SQL, with no point-in-time snapshot across partitions. SQL supports INNER, LEFT, RIGHT and CROSS joins between maps (no FULL join), and joins tables in the order they are written, without reordering them. For hot journeys, denormalise in the feed rather than join at query time.
 - IMap is AP: during a split-brain, both sides keep serving their copy.
 
@@ -52,7 +52,7 @@ flowchart LR
 - (−) Data-quality problems in a source are copied into the layer; fix them at the source.
 - (−) Do not use when one system already holds all the data a journey needs, when batch integration is enough, or when consumers do not need current data.
 
-**Related patterns.** [ARCH-8](arch-08-change-fed-read-model.md), [ARCH-11](arch-11-orchestration-as-dataflow.md), [IP-10](../streaming-patterns/ip-10-fan-in-fan-out.md), [IP-11](../streaming-patterns/ip-11-enrichment-pipeline.md).
+**Related patterns.** [ARCH-8](arch-08-change-fed-read-model.md), [ARCH-11](arch-11-orchestration-as-dataflow.md), [STR-4](../streaming-patterns/str-04-fan-in-fan-out.md), [STR-5](../streaming-patterns/str-05-enrichment-pipeline.md).
 
 ---
 

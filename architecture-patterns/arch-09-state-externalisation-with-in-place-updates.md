@@ -38,7 +38,7 @@ flowchart LR
 - (−) Move one stage at a time. Duplicate side effects are still handled by [ARCH-5](arch-05-platform-level-idempotency.md).
 - (−) The state store is now on every step's critical path; plan for it being unavailable ([ARCH-2](arch-02-brownout-and-degraded-mode.md)).
 
-**Related patterns.** [ARCH-5](arch-05-platform-level-idempotency.md), [ARCH-4](arch-04-compute-near-data.md), [IP-18](../streaming-patterns/ip-18-partitioned-compute.md), [ARCH-6](arch-06-site-strategy-per-data-class.md).
+**Related patterns.** [ARCH-5](arch-05-platform-level-idempotency.md), [ARCH-4](arch-04-compute-near-data.md), [STR-11](../streaming-patterns/str-11-partitioned-compute.md), [ARCH-6](arch-06-site-strategy-per-data-class.md).
 
 ---
 

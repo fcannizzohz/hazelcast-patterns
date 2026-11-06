@@ -1,10 +1,10 @@
 [Patterns](../patterns.md) › [Streaming patterns](README.md) › [Production concerns at the boundaries](README.md#production-concerns-at-the-boundaries)
 
-# IP-13 Lost Journal Recovery
+# STR-7 Lost Journal Recovery
 
 **Intent.** Detect when a change journal has dropped events and recover them.
 
-**Context.** Stages are chained by change journals ([IP-8](ip-08-journal-chained-stages.md)), which are ring buffers with finite capacity.
+**Context.** Stages are chained by change journals ([STR-2](str-02-journal-chained-stages.md)), which are ring buffers with finite capacity.
 
 **Problem.** What happens when load exceeds planned capacity and the journal overwrites events before the next stage reads them?
 
@@ -35,8 +35,8 @@ flowchart TD
 - (−) Detection and recovery are application code that must be written and tested; recovery needs a version or timestamp field in the data.
 - (−) Journal capacity still needs sizing to planned peak.
 
-**Related patterns.** [IP-8](ip-08-journal-chained-stages.md), [IP-14](ip-14-backpressure.md).
+**Related patterns.** [STR-2](str-02-journal-chained-stages.md), [STR-8](str-08-backpressure.md).
 
 ---
 
-← [IP-12 Durable Maps](ip-12-durable-maps.md) · [IP-14 Backpressure](ip-14-backpressure.md) →
+← [STR-6 Durable Maps](str-06-durable-maps.md) · [STR-8 Backpressure](str-08-backpressure.md) →
