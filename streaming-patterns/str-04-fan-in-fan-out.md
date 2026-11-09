@@ -2,7 +2,7 @@
 
 # STR-4 Fan-in / Fan-out
 
-Also known as: Debulk, Split and Aggregate.
+Also known as: Debulk, Split and Aggregate; Splitter, Aggregator, Composed Message Processor (EIP).
 
 **Intent.** Split, correlate and re-assemble streams of events.
 

@@ -55,6 +55,9 @@ How streaming pipelines connect to each other and to external systems, and how t
 | STR-4 | [Fan-in / Fan-out](streaming-patterns/str-04-fan-in-fan-out.md) | Split, correlate and re-assemble streams |
 | STR-5 | [Enrichment Pipeline](streaming-patterns/str-05-enrichment-pipeline.md) | Look up in-memory reference data per event |
 | STR-6 | [Durable Maps](streaming-patterns/str-06-durable-maps.md) | Persist pipeline state to the system of record |
+| STR-13 | [Claim Check](streaming-patterns/str-13-claim-check.md) | Store a large payload once, pass its key |
+| STR-14 | [Topic-Based Publish-Subscribe](streaming-patterns/str-14-topic-based-publish-subscribe.md) | Broadcast to subscribers; pick the channel by loss and volume |
+| STR-15 | [Branching Pipelines](streaming-patterns/str-15-branching-pipelines.md) | Route, copy and tap events inside one pipeline |
 
 ### Production concerns at the boundaries
 
@@ -65,6 +68,8 @@ How streaming pipelines connect to each other and to external systems, and how t
 | STR-9 | [Async Batched I/O](streaming-patterns/str-09-async-batched-io.md) | Call slow services in asynchronous batches |
 | STR-10 | [Processing Guarantee](streaming-patterns/str-10-processing-guarantee.md) | At-least-once or exactly-once per pipeline |
 | STR-11 | [Partitioned Compute](streaming-patterns/str-11-partitioned-compute.md) | Process each event where its data lives |
+| STR-12 | [Dead-Letter Side Output](streaming-patterns/str-12-dead-letter-side-output.md) | Divert events a stage cannot process, with the reason |
+| STR-16 | [Resequencer](streaming-patterns/str-16-resequencer.md) | Restore per-key order before a stage that needs it |
 
 ## [Architecture patterns](architecture-patterns/README.md)
 
@@ -90,6 +95,9 @@ System-level and capability architectures built on Hazelcast, combining the cach
 | ARCH-9 | [State Externalisation with In-Place Updates](architecture-patterns/arch-09-state-externalisation-with-in-place-updates.md) | Move service state into the grid, update in place |
 | ARCH-10 | [Live Operational View](architecture-patterns/arch-10-live-operational-view.md) | Streaming job maintains live views and totals |
 | ARCH-11 | [Orchestration as Dataflow](architecture-patterns/arch-11-orchestration-as-dataflow.md) | Replace chatty service calls with a DAG |
+| ARCH-12 | [Process Manager with Keyed State](architecture-patterns/arch-12-process-manager-with-keyed-state.md) | Drive each process instance as one keyed record, with time-outs |
+| ARCH-13 | [Server-Side Filtered Subscriptions](architecture-patterns/arch-13-server-side-filtered-subscriptions.md) | Push only matching changes; keep a local matching copy |
+| ARCH-14 | [Request-Reply over the Grid](architecture-patterns/arch-14-request-reply-over-the-grid.md) | Async request and reply by correlation id through maps |
 
 ## [Solution patterns](solution-patterns/README.md)
 

@@ -2,6 +2,8 @@
 
 # STR-10 Processing Guarantee
 
+Also known as: Transactional Client (EIP).
+
 **Intent.** Choose at-least-once or exactly-once per pipeline.
 
 **Context.** Pipelines write to sinks, and some downstream systems are legacy and not idempotent.

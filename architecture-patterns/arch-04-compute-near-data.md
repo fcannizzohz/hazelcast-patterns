@@ -2,7 +2,7 @@
 
 # ARCH-4 Compute Near Data
 
-Also known as: Data-local processing, function shipping.
+Also known as: Data-local processing, function shipping; Scatter-Gather, Service Activator, Content Filter (EIP).
 
 **Intent.** Send the processing to the nodes that hold the data, and return only the results, instead of moving the data to the processing.
 

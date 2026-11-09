@@ -39,4 +39,4 @@ flowchart LR
 
 ---
 
-← [STR-10 Processing Guarantee](str-10-processing-guarantee.md)
+← [STR-10 Processing Guarantee](str-10-processing-guarantee.md) · [STR-12 Dead-Letter Side Output](str-12-dead-letter-side-output.md) →

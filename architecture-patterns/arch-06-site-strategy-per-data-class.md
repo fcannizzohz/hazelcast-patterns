@@ -43,7 +43,7 @@ flowchart TB
     HA -.->|async replication| HD
 ```
 
-**Hazelcast mechanics.** CP Subsystem, with CP members on all three sites; a cluster stretched across low-latency sites with a partition group (`ZONE_AWARE`, `PLACEMENT_AWARE` or `CUSTOM`) so that each backup lands on a different site from its primary; split-brain protection and merge policies for the stretched cluster; WAN replication with merge policies; client failover (`ClientFailoverConfig`). WAN replication, CP Subsystem (5.5) and client failover are Enterprise Edition features. The member on the tie-breaker site is a full cluster member, so a zone-aware partition group also places AP partitions and backups there; size it accordingly.
+**Hazelcast mechanics.** CP Subsystem, with CP members on all three sites; a cluster stretched across low-latency sites with a partition group (`ZONE_AWARE`, `PLACEMENT_AWARE` or `CUSTOM`) so that each backup lands on a different site from its primary; split-brain protection and merge policies for the stretched cluster; WAN replication with merge policies; client failover (`ClientFailoverConfig`). WAN replication, CP Subsystem and client failover are Enterprise Edition features. The member on the tie-breaker site is a full cluster member, so a zone-aware partition group also places AP partitions and backups there; size it accordingly.
 
 **Consequences.**
 - (+) An explicit, testable recovery point and recovery time per data class.

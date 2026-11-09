@@ -16,6 +16,9 @@ These patterns describe how streaming pipelines connect to each other and to the
 | STR-4 | [Fan-in / Fan-out](str-04-fan-in-fan-out.md) | Split, correlate and re-assemble streams |
 | STR-5 | [Enrichment Pipeline](str-05-enrichment-pipeline.md) | Look up in-memory reference data per event |
 | STR-6 | [Durable Maps](str-06-durable-maps.md) | Persist pipeline state to the system of record |
+| STR-13 | [Claim Check](str-13-claim-check.md) | Store a large payload once, pass its key |
+| STR-14 | [Topic-Based Publish-Subscribe](str-14-topic-based-publish-subscribe.md) | Broadcast to subscribers; pick the channel by loss and volume |
+| STR-15 | [Branching Pipelines](str-15-branching-pipelines.md) | Route, copy and tap events inside one pipeline |
 
 ## Production concerns at the boundaries
 
@@ -28,8 +31,12 @@ These patterns deal with overload, duplicates, slow dependencies and failure whe
 | STR-9 | [Async Batched I/O](str-09-async-batched-io.md) | Call slow services in asynchronous batches |
 | STR-10 | [Processing Guarantee](str-10-processing-guarantee.md) | At-least-once or exactly-once per pipeline |
 | STR-11 | [Partitioned Compute](str-11-partitioned-compute.md) | Process each event where its data lives |
+| STR-12 | [Dead-Letter Side Output](str-12-dead-letter-side-output.md) | Divert events a stage cannot process, with the reason |
+| STR-16 | [Resequencer](str-16-resequencer.md) | Restore per-key order before a stage that needs it |
 
 Dedup with Flush on Snapshot (old ID IP-15) was removed on 6 November 2026 and was never given a STR ID. For exactly-once effects, see [STR-10](str-10-processing-guarantee.md) and [ARCH-5](../architecture-patterns/arch-05-platform-level-idempotency.md).
+
+> **Where Hazelcast is not the tool.** Guaranteed delivery across a full outage, a general message broker, and bridging between messaging systems are better served by a durable log or broker (such as Kafka). Hazelcast structures are in memory: backups survive member loss within the backup count, not a full cluster restart without Persistence. Use a durable log at the boundary and Hazelcast for the stateful processing behind it.
 
 ## ID history
 

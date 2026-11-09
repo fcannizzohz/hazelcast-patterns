@@ -2,7 +2,7 @@
 
 # ARCH-5 Platform-Level Idempotency
 
-Also known as: Control-plane consistency.
+Also known as: Control-plane consistency; Idempotent Receiver (EIP).
 
 **Intent.** Claim each operation's key once, atomically, in a strongly consistent store every service shares.
 
@@ -33,7 +33,7 @@ sequenceDiagram
     S2->>SoR: check outcome of opId
 ```
 
-**Hazelcast mechanics.** CP Subsystem, which must be enabled with `cp-member-count` of at least 3. With the default of 0 it runs in "unsafe mode", backed by AP data structures, and gives none of the guarantees below; `CPMap` refuses to run in that mode. `CPMap.putIfAbsent` or `compareAndSet` for idempotency keys. `FencedLock` for mutual exclusion and as the usual building block for leader election; its fencing token protects the system of record only if the system of record checks it on every write. `CPMap` exists since 5.4. In Hazelcast 5.5 the CP Subsystem and `CPMap` are Enterprise Edition features.
+**Hazelcast mechanics.** CP Subsystem, which must be enabled with `cp-member-count` of at least 3. With the default of 0 it runs in "unsafe mode", backed by AP data structures, and gives none of the guarantees below; `CPMap` refuses to run in that mode. `CPMap.putIfAbsent` or `compareAndSet` for idempotency keys. `FencedLock` for mutual exclusion and as the usual building block for leader election; its fencing token protects the system of record only if the system of record checks it on every write. The CP Subsystem and `CPMap` are Enterprise Edition features.
 
 **Consequences.**
 - (+) Duplicate executions in failover tests can be measured, and driven to zero when the outcome check against the system of record is itself atomic.

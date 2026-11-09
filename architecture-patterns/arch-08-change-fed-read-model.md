@@ -2,7 +2,7 @@
 
 # ARCH-8 Change-Fed Read Model
 
-Also known as: System-of-record offload, read acceleration, coexistence view (migration variant).
+Also known as: System-of-record offload, read acceleration, coexistence view (migration variant); Channel Adapter (EIP).
 
 **Intent.** Serve reads from a CDC-fed in-memory copy while the store keeps every write.
 

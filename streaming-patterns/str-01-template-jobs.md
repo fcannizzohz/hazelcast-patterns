@@ -2,7 +2,7 @@
 
 # STR-1 Template Jobs
 
-Also known as: Composable Pipelines.
+Also known as: Composable Pipelines; Pipes and Filters (EIP).
 
 **Intent.** Platform teams build reusable pipeline parts; service teams compose them.
 

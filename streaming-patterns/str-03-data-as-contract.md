@@ -2,6 +2,8 @@
 
 # STR-3 Data as Contract
 
+Also known as: Canonical Data Model, Format Indicator, Message Translator (EIP).
+
 **Intent.** A shared schema lets pipelines evolve independently.
 
 **Context.** Independent teams build pipelines that exchange the same messages.

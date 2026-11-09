@@ -2,7 +2,7 @@
 
 # ARCH-11 Orchestration as Dataflow
 
-Also known as: Service-data orchestration.
+Also known as: Service-data orchestration; Pipes and Filters (EIP).
 
 **Intent.** Run chatty service-to-service stages as one streaming DAG with co-located state.
 
@@ -47,4 +47,4 @@ flowchart TB
 
 ---
 
-← [ARCH-10 Live Operational View](arch-10-live-operational-view.md)
+← [ARCH-10 Live Operational View](arch-10-live-operational-view.md) · [ARCH-12 Process Manager with Keyed State](arch-12-process-manager-with-keyed-state.md) →

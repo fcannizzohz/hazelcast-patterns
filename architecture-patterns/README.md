@@ -21,7 +21,7 @@ Patterns that combine several caching, streaming and capability patterns to solv
 
 ## Capability architectures
 
-Reusable architectures for one capability each (idempotency, site resilience, read offload, elastic state, live views, migration), built from Hazelcast's building blocks. The system of record stays authoritative throughout.
+Reusable architectures for one capability each (idempotency, site resilience, read offload, elastic state, live views, migration, process coordination, filtered subscriptions, request-reply), built from Hazelcast's building blocks. The system of record stays authoritative throughout.
 
 | ID | Pattern | Intent |
 |---|---|---|
@@ -32,6 +32,9 @@ Reusable architectures for one capability each (idempotency, site resilience, re
 | ARCH-9 | [State Externalisation with In-Place Updates](arch-09-state-externalisation-with-in-place-updates.md) | Move service state into the grid, update in place |
 | ARCH-10 | [Live Operational View](arch-10-live-operational-view.md) | Streaming job maintains live views and totals |
 | ARCH-11 | [Orchestration as Dataflow](arch-11-orchestration-as-dataflow.md) | Replace chatty service calls with a DAG |
+| ARCH-12 | [Process Manager with Keyed State](arch-12-process-manager-with-keyed-state.md) | Drive each process instance as one keyed record, with time-outs |
+| ARCH-13 | [Server-Side Filtered Subscriptions](arch-13-server-side-filtered-subscriptions.md) | Push only matching changes; keep a local matching copy |
+| ARCH-14 | [Request-Reply over the Grid](arch-14-request-reply-over-the-grid.md) | Async request and reply by correlation id through maps |
 
 ## Combining patterns
 

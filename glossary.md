@@ -26,3 +26,10 @@ Terms used across the patterns.
 | **System of record** | The authoritative store (relational database, NoSQL store, ledger). Hazelcast holds a hot copy; the system of record stays authoritative. |
 | **Entry processor** | Code sent to the member that owns a key and run there on the key's partition thread, atomically for that key. |
 | **Brownout / degraded mode** | Brownout: switching off optional work under overload. Degraded mode: continuing with reduced function when a dependency fails. |
+| **Ringbuffer** | A fixed-capacity, in-memory ring of items held in one partition; old items are overwritten when it is full (or the writer is refused, depending on settings). |
+| **Reliable Topic** | A publish-subscribe topic backed by a Ringbuffer, so listeners can catch up on recent messages; retention is bounded by the ring. |
+| **`ReliableMessageListener`** | A Reliable Topic listener that can choose its starting sequence, store the last one it processed, and declare whether it tolerates lost messages. |
+| **`TopicOverloadPolicy`** | What a Reliable Topic publisher does when the ring is full of unexpired messages: block, fail, or discard the newest or oldest. |
+| **Continuous Query Cache** | A client- or member-side copy of the entries of a map that match a predicate, kept current by events; eventually consistent. |
+| **Suspend on failure** | A job setting: on an error the job is suspended, keeping its snapshot so it can be resumed, instead of being terminated. |
+| **Preserve order** | A pipeline setting that stops events being reordered between parallel processors; it keeps the source's order per partition, not a total order. |

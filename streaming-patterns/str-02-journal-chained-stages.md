@@ -2,7 +2,7 @@
 
 # STR-2 Journal-Chained Stages
 
-Also known as: Event-driven stage chaining.
+Also known as: Event-driven stage chaining; Pipes and Filters (EIP).
 
 **Intent.** Each stage writes to a state map whose journal triggers the next stage.
 

@@ -2,7 +2,7 @@
 
 # ARCH-1 Operational Data Fabric
 
-Also known as: Operational data layer, data hub.
+Also known as: Operational data layer, data hub; Normalizer (EIP).
 
 **Intent.** Give consumers one operational access layer over several systems of record, while each system keeps owning and writing its own data.
 

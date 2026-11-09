@@ -2,6 +2,8 @@
 
 # STR-6 Durable Maps
 
+Also known as: Transactional Client (EIP).
+
 **Intent.** Persist the state a pipeline keeps in in-memory maps to a system of record, with a clear rule for how far the stored copy can lag or lead the pipeline.
 
 **Context.** State lives in in-memory maps, but a system of record must hold it durably.

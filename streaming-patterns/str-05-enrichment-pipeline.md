@@ -2,6 +2,8 @@
 
 # STR-5 Enrichment Pipeline
 
+Also known as: Content Enricher (EIP).
+
 **Intent.** Each event is enriched with reference data held in memory.
 
 **Context.** Most events cannot be processed in isolation: they need lookup data.
