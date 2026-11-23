@@ -92,4 +92,4 @@ flowchart LR
 
 ---
 
-← [SOL-2 High-Throughput Tiered Idempotency](sol-02-high-throughput-tiered-idempotency.md)
+← [SOL-2 High-Throughput Tiered Idempotency](sol-02-high-throughput-tiered-idempotency.md) · [SOL-4 Operational Domain Mesh with Analytics Feedback](sol-04-operational-domain-mesh-with-analytics-feedback.md) →
